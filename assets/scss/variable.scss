@@ -1,0 +1,33 @@
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+
+@mixin ellipsis($row:2) {
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box;    //将对象作为弹性伸缩盒子模型显示。
+  -webkit-box-orient:vertical;  // 从上到下垂直排列子元素
+  -webkit-line-clamp:$row; //显示的行数
+}
+.custome-dialog{
+    .el-dialog {
+        border-radius: 7px;
+        &__header {
+          padding: 13px 20px;
+          background-color: #f0f2f5;
+          border-top-left-radius: 7px;
+          border-top-right-radius: 7px;
+        }
+        &__title {
+          color: var(--color-font-2);
+          font-size: $font-size-md;
+        }
+      }
+}
+.el-popup-parent--hidden{
+  // 因为滚动条的原因，dialog出来时Header会动，兼容一下
+  .common-header{
+    padding-right: 17px;
+  }
+}
